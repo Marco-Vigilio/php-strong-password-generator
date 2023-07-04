@@ -1,29 +1,14 @@
 <?php 
-
+include_once __DIR__ . "/functions.php";
 
 if(!empty($_GET["pswLength"])){
         if($_GET["pswLength"] < 8){
             echo "la password deve essere minimo di 8 caratteri";
         }
         else{
-            //echo $_GET["pswLength"];
-            echo gettype($_GET["pswLength"]);
-            echo gettype(2);
             generatePassword($_GET["pswLength"]);
         }
    
-}
-
-function generatePassword($length){
-    $letter = [];
-    for ($i=0; $i < $length; $i++) { 
-        array_push($letter, chr(rand(33,122) //simboli
-         //or rand(48, 57) //numeri
-         //or rand(65, 90) //lettere maiuscole
-         //or rand(97,122) // lettere minuscole
-        ));
-    }
-    echo(implode("",$letter));
 }
 
 ?>
