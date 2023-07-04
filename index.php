@@ -6,7 +6,11 @@ if(!empty($_GET["pswLength"])){
             echo "la password deve essere minimo di 8 caratteri";
         }
         else{
-            generatePassword($_GET["pswLength"]);
+            session_start();
+            $psw = generatePassword($_GET["pswLength"]);
+            //echo $psw;
+            $_SESSION["password"] = $psw;
+            header("Location: ./server.php");
         }
    
 }

@@ -8,6 +8,7 @@ function generatePassword($length){
          //or rand(97,122) // lettere minuscole
         ));
     }
-    echo(implode("",$letter));
+    $password = implode("",$letter);
+    return $password;
 }
 ?>
